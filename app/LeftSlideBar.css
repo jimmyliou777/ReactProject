@@ -1,0 +1,42 @@
+html,body{
+	
+}
+
+#control{
+	position: absolute;
+	transform: translate3d(-100%,0,0);
+	/*left:-250px;*/
+	top:0;
+	width: 250px;
+	height: 100%;
+	background-color: rgba(0,0,0,.5);
+	padding: 30px;
+	box-sizing: border-box;
+	color: #49f;
+	font-size: 14px;
+	-webkit-transition:all .5s linear;
+	transition:all .5s linear;
+}
+#control h1{
+	font-size: 30px;
+	padding: 0;
+	color: orange;
+	margin:10px 0 30px 30px;
+}
+#control.slide{
+   transform: translate3d(0,0,0);
+   -webkit-transition:all .5s linear;
+}
+#btn{
+	position: absolute;
+	top:30px;
+	right: -40px;
+}
+
+#btn span{
+	display: block;
+	width: 30px;
+	height: 1px;
+	margin-bottom: 4px;
+	border-bottom: 2px solid #fff;
+}
