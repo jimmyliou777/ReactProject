@@ -1,4 +1,3 @@
-# ReactProject
 # Get Started
 - cd ReactProject
 - npm run dev
