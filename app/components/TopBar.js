@@ -30,7 +30,9 @@ class TopBar extends Component {
 	componentDidMount() {
 		console.log('componentDidMount');
 		this.swiper.topBar = new Swiper(`#${this.swiper_id}`, {
-			loop: true
+			loop: true,
+			nextButton: `#${this.swiper_id} .swiper-button-next`,
+            prevButton: `#${this.swiper_id} .swiper-button-prev`,
 		});
 	}
 
@@ -53,8 +55,8 @@ class TopBar extends Component {
 			</SwiperList>
 		);
 		return (
-			<SwiperComponent id={this.swiper_id}>
-			  {listItems}
+			<SwiperComponent id={this.swiper_id} hasBtn={true}>
+			  {listItems}			  
 			</SwiperComponent>
 		);
 	}

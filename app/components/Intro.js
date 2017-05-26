@@ -26,7 +26,9 @@ class Intro extends Component {
 			pagination: '.swiper-pagination',
 			slidesPerView: 3,
 			paginationClickable: true,
-			spaceBetween: 0
+			spaceBetween: 0,
+			autoplay:1500,
+			autoplayDisableOnInteraction:false,
 		});
 	}
 
