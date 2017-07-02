@@ -1,9 +1,25 @@
-import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { removeTodo, addTodo } from './actions/menuAction';
-import { Unmount, Didmount, } from './actions/canvasAction';
-import { browserHistory, Link } from 'react-router';
+import React, {
+    Component
+} from 'react';
+import {
+    bindActionCreators
+} from 'redux';
+import {
+    connect
+} from 'react-redux';
+import {
+    removeTodo,
+    addTodo
+} from './actions/menuAction';
+import {
+    Unmount,
+    Didmount,
+} from './actions/canvasAction';
+import {
+    browserHistory,
+    Link,
+    hashHistory,
+} from 'react-router';
 
 import './RWD.css';
 import './css/flat-ui/dist/css/flat-ui.css';
@@ -45,7 +61,7 @@ class App extends Component {
         });
         this.props.actions.removeClass(0);
         setTimeout(() => {
-            browserHistory.push(path);
+            hashHistory.push(path);
             this.setState({
                 loadingState: 'none'
             })
@@ -73,7 +89,7 @@ class App extends Component {
         this.setState({
             height: this.content.offsetHeight
         });
-    //console.log(`this.state.height:${this.state.height}`);
+        //console.log(`this.state.height:${this.state.height}`);
     }
 
     render() {
@@ -127,20 +143,23 @@ class App extends Component {
          <li><a onClick={(e) => this.handleClick(e, '/d3')}>d3View</a></li>
          <li><a onClick={(e) => this.handleClick(e, '/memList')}>fetchJsonData</a></li>
         </ul>    
-      </div>
-      <TopBar />
-      <div style={{
-                position: 'relative'
-            }}>
-         {this.props.children}
-         <Footer />
-         <div className="loading" style={loadingStyle}>     	
-         </div>
-		       <div style={LoadImage}><img src={loadingImg} alt="" /></div>      
-      </div>
-    </div>
-        );
-    }
+      </div> < TopBar / >
+            < div style = {
+                {
+                    position: 'relative'
+                }
+            } > {
+                this.props.children
+            }
+            <Footer /> < div className = "loading"
+            style = {
+                loadingStyle
+            } >
+            < /div> < div style = {
+            LoadImage
+        } > <img src={loadingImg} alt="" /> < /div>       < /div > < /div>
+    );
+}
 }
 
 //只專注特定屬性變化

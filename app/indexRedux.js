@@ -27,7 +27,8 @@ import {
 	Router,
 	Route,
 	Link,
-	IndexRoute
+	IndexRoute,
+	hashHistory,
 } from 'react-router';
 import {
 	syncHistoryWithStore,
@@ -71,7 +72,7 @@ let store = createStore(
 sagaMiddleware.run(helloSaga);
 
 // Create an enhanced history that syncs navigation events with the store
-const history = syncHistoryWithStore(browserHistory, store)
+const history = syncHistoryWithStore(hashHistory, store)
 	//console.log(store.getState());
 
 ReactDOM.render(
