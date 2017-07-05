@@ -1,25 +1,9 @@
-import React, {
-    Component
-} from 'react';
-import {
-    bindActionCreators
-} from 'redux';
-import {
-    connect
-} from 'react-redux';
-import {
-    removeTodo,
-    addTodo
-} from './actions/menuAction';
-import {
-    Unmount,
-    Didmount,
-} from './actions/canvasAction';
-import {
-    browserHistory,
-    Link,
-    hashHistory,
-} from 'react-router';
+import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { removeTodo, addTodo } from './actions/menuAction';
+import { Unmount, Didmount, } from './actions/canvasAction';
+import { browserHistory, Link, hashHistory, } from 'react-router';
 
 import './RWD.css';
 import './css/flat-ui/dist/css/flat-ui.css';
@@ -32,6 +16,7 @@ import Swiper from 'swiper';
 
 import AppNav from './AppNav';
 import TopBar from './components/TopBar';
+import Main from './components/Main';
 import Footer from './components/Footer';
 
 
@@ -89,7 +74,7 @@ class App extends Component {
         this.setState({
             height: this.content.offsetHeight
         });
-        //console.log(`this.state.height:${this.state.height}`);
+    //console.log(`this.state.height:${this.state.height}`);
     }
 
     render() {
@@ -122,7 +107,7 @@ class App extends Component {
         //   dispatch
         // } = this.props;
         return (
-            <div>
+            <div id="app_main">
       <MuiThemeProvider>
        <AppNav
             menuState={this.props.inClass}
@@ -143,23 +128,20 @@ class App extends Component {
          <li><a onClick={(e) => this.handleClick(e, '/d3')}>d3View</a></li>
          <li><a onClick={(e) => this.handleClick(e, '/memList')}>fetchJsonData</a></li>
         </ul>    
-      </div> < TopBar / >
-            < div style = {
-                {
-                    position: 'relative'
-                }
-            } > {
-                this.props.children
+      </div> 
+      <TopBar / >
+      <Main />
+            <div style = {{
+                position: 'relative'
+            }}> 
+            {
+            this.props.children
             }
-            <Footer /> < div className = "loading"
-            style = {
-                loadingStyle
-            } >
-            < /div> < div style = {
-            LoadImage
-        } > <img src={loadingImg} alt="" /> < /div>       < /div > < /div>
-    );
-}
+            <Footer />        
+            </div> 
+        </div>
+        );
+    }
 }
 
 //只專注特定屬性變化

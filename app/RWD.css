@@ -172,12 +172,42 @@ body{
 .d3block p{
    font-size: 20px;
 }
+#app_main h1,#app_main h3{
+  font-family: "Open Sans", "Microsoft JhengHei", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    line-height: 1.5em;
+}
+.main{
+  width: 100%;
+  text-align: center;
+}
+.main h1{
+ font-size: 30px;
+}
+.main h3{
+ font-size: 20px;
+}
+.main p{
+    font-size: 16px;
+    line-height: 1.5em;
+    margin-bottom: 0;
+    width: 66%;
+    margin-left: 18%;
+}
+.main img{
+  max-width: 137px;
+  border-radius: 50%;
+}
+
 
 .block {
   display: inline-block;
   font-size: 20px;
   box-sizing: border-box;
-  border-top: 2px solid rgba(0,0,0,.12)!important;
+  /*border-top: 2px solid rgba(0,0,0,.12)!important;*/
   height: 200px;
   text-align: center;
   padding: 10px;
@@ -195,7 +225,8 @@ body{
   min-width: 200px;
 }
 .block h4 {
-  text-align: center;
+  text-align: left;
+  margin-left: 7%;
 }
 .block p {
   font-size: 15px;
@@ -203,6 +234,11 @@ body{
 .block.footer {
   width: 100%;
   margin-bottom: 10px;
+}
+.block.footer .information{
+  line-height: 1.5em;
+  text-align: left;
+  margin-left: 15%;
 }
 #canvas{
   width:100%;

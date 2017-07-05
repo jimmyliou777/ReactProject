@@ -1,6 +1,4 @@
-import React, {
-    Component
-} from 'react';
+import React, { Component } from 'react';
 
 class Footer extends Component {
     constructor(props) {
@@ -29,7 +27,7 @@ class Footer extends Component {
         return (
             <div className="App-footer" style={divStyle}>
                 <footer>
-            <h1>Footer</h1>
+            <h1>工作經歷</h1>
             <p>Posted by: Hege Refsnes</p>
             <p>Contact information: <a href="mailto:someone@example.com">
                someone@example.com</a>.</p>
