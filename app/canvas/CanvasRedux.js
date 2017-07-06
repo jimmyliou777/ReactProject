@@ -1,49 +1,30 @@
-import React, {
-    Component
-} from 'react';
-import {
-    utils,
-    RotationToMouse
-} from './utils';
-import {
-    Ball
-} from './ball';
-import {
-    Button
-} from 'react-bootstrap';
-import {
-    bindActionCreators
-} from 'redux';
-import {
-    connect
-} from 'react-redux';
-import {
-    Increment,
-    Decrement,
-    Init
-} from '../actions/canvasAction';
-import {
-    Unmount
-} from '../actions/canvasAction';
+import React, { Component } from 'react';
+import { utils, RotationToMouse } from './utils';
+import { Ball } from './ball';
+import { Button } from 'react-bootstrap';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { Increment, Decrement, Init } from '../actions/canvasAction';
+import { Unmount } from '../actions/canvasAction';
 
 class Canvas extends Component {
     constructor(props) {
-            super(props);
-            this.handleClick = this.handleClick.bind(this);
-            this.drawFrame = this.drawFrame.bind(this);
-            this.ctx;
-            this.ball = new Ball();
-            this.state = {
-                count: 0,
-                unmount: false
-            };
-        }
-        //conmponent Will Unmount
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+        this.drawFrame = this.drawFrame.bind(this);
+        this.ctx;
+        this.ball = new Ball();
+        this.state = {
+            count: 0,
+            unmount: false
+        };
+    }
+    //conmponent Will Unmount
     componentWillUnmount() {
-            console.log('componentWillUnmount-canvas');
-            console.log('this.props.unmount:' + this.props.unmount);
-        }
-        //before render
+        console.log('componentWillUnmount-canvas');
+        console.log('this.props.unmount:' + this.props.unmount);
+    }
+    //before render
     componentWillMount() {
         console.log('componentWillMount-canvas');
     }
@@ -77,9 +58,9 @@ class Canvas extends Component {
 
 
 
-        // ball.x += vx;
-        // ball.y += vy;
-        // ball.draw(ctx);
+    // ball.x += vx;
+    // ball.y += vy;
+    // ball.draw(ctx);
     }
     initCanvas() {
         console.log('init');
@@ -131,9 +112,9 @@ class Canvas extends Component {
                 ball.x += ball.vx;
                 ball.y += ball.vy;
                 if (ball.x - ball.radius > this.canW ||
-                    ball.radius + ball.x < 0 ||
-                    ball.y - ball.radius > this.canH ||
-                    ball.y + ball.radius < 0) {
+                        ball.radius + ball.x < 0 ||
+                        ball.y - ball.radius > this.canH ||
+                        ball.y + ball.radius < 0) {
 
                     ball.x = this.canW / 2;
                     ball.y = this.canH;
@@ -188,11 +169,20 @@ class Canvas extends Component {
             <div className="block canvasbBlock"><div className="canvas" style={divStyle}>
                 <div>
                    <h1>Canvas Game</h1>
-                   <p style={{color:'black'}}>{this.props.index}</p>
-                   <Button bsStyle="success" onClick={this.handleClick} style={{'marginBottom':'10px'}}>更新</Button>
+                   <p style={{
+                color: 'black'
+            }}>{this.props.index}</p>
+                   <Button bsStyle="success" onClick={this.handleClick} style={{
+                'marginBottom': '10px'
+            }}>更新</Button>
                 </div>
-                <div style={{'marginBottom':'50px','width':'100%'}}>
-                  <canvas id="canvas" ref={(ref) => this.canvas = ref} width={500} height={500} style={{'backgroundColor':'#000'}}></canvas>
+                <div style={{
+                'marginBottom': '50px',
+                'width': '100%'
+            }}>
+                  <canvas id="canvas" ref={(ref) => this.canvas = ref} width={500} height={500} style={{
+                'backgroundColor': '#000'
+            }}></canvas>
                 </div>
                 </div></div>
         )

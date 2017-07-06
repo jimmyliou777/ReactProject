@@ -129,7 +129,7 @@ class App extends Component {
          <li><a onClick={(e) => this.handleClick(e, '/memList')}>fetchJsonData</a></li>
         </ul>    
       </div> 
-      <TopBar / >
+      
       <Main />
             <div style = {{
                 position: 'relative'

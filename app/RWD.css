@@ -188,25 +188,43 @@ body{
 .main{
   width: 100%;
   text-align: center;
+  margin-top: 20px;
 }
 .main h1{
+  opacity: 0;
  font-size: 30px;
 }
 .main h3{
+  opacity: 0;
  font-size: 20px;
 }
 .main p{
+  opacity: 0;
     font-size: 16px;
     line-height: 1.5em;
     margin-bottom: 0;
     width: 66%;
     margin-left: 18%;
+    
 }
 .main img{
   max-width: 137px;
   border-radius: 50%;
 }
-
+.main img.show,.main h1.show,.main h3.show,.main p.show {
+  animation: main-top 0.5s ease forwards;
+}
+@keyframes main-top {
+            0% {
+              opacity: 0;
+              
+            }
+            
+            100% {
+              opacity: 1;
+              
+            }
+        }
 
 .block {
   display: inline-block;
