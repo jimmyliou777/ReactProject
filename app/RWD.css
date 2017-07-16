@@ -1,4 +1,12 @@
 @charset "UTF-8";
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
 * {
   vertical-align: top;
   font-family: 微軟正黑體;
@@ -235,6 +243,15 @@ body{
   text-align: center;
   padding: 10px;
 }
+.block.timeline {
+  width: 100%;
+  height: auto;
+  background-color: #D4EBE8;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .block.a{
   padding: 30px;
   background-color: #000;
@@ -283,7 +300,74 @@ body{
   height: 200px;
   background: #aaa;
 }
-
+.timeline .timeline_content {
+   height: 100%;
+   width: 6px;
+   background-color: rgba(255,255,255,.4);
+   margin:0;
+   padding-top: 50px;
+}
+.timeline_content .dialog_wrapper{
+  height: 160px;
+  position: relative;
+  
+}
+.dialog_wrapper .dialog{
+  position: absolute;
+  width: 250px;
+  transition: .5s;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 15px 15px #4FBDBC;
+  top:-10px;
+  text-align: left;
+  padding:15px 20px;
+}
+.dialog_wrapper::before{
+  content: "";
+  display: block;
+  width: 20px;
+  height:20px;
+  border-radius: 50%;
+  border:solid 5px white;
+  transform: translateX(-40%);
+}
+.dialog .date_year{
+  font-size: 36px;
+  font-weight: 700 !important;
+  margin-bottom: 10px;
+  letter-spacing: 3px !important;
+}
+.dialog::before{
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  position: absolute;
+  transform: rotate(45deg);
+  border-radius: 3px;
+}
+.dialog_wrapper:nth-child(2n+1) .dialog {
+    left: 40px;
+  }
+.dialog_wrapper:nth-child(2n) .dialog {
+    right: 40px;
+  }
+.dialog_wrapper:nth-child(2n+1) .dialog::before {
+    left: -10px;
+}
+.dialog_wrapper:nth-child(2n) .dialog::before {
+    right: -10px;
+}
+.dialog:hover{
+  transform: translate3d(-10px,-10px,0);
+  box-shadow: 20px 20px #4FBDBC;
+}
+.timeline ul{
+  list-style: none;
+}
 .intro {
   height: initial;
 }

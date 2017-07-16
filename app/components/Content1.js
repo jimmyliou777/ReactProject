@@ -24,12 +24,12 @@ class Content1 extends Component {
 	//render html elements
 	render() {
 		return (<div className="Sample">
-           <div className="block b"><h4>B</h4><p>這室內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文</p></div>
-  <div className="block c"><h4>C</h4><p>這室內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文</p></div>
-  <div className="block d"><h4>D</h4><p>這室內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文</p></div>
-  <div className="block e"><h4>E</h4><p>這室內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文</p></div>
-  <div className="block f"><h4>F</h4><p>這室內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文</p></div>
-  <div className="block g"><h4>G</h4><p>這室內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文</p></div>
+           <div className="block b"><h4>Javascript</h4><p>這室內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文</p></div>
+  <div className="block c"><h4>CSS</h4><p>這室內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文</p></div>
+  <div className="block d"><h4>HTML</h4><p>這室內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文</p></div>
+  <div className="block e"><h4>ASP.NET(C#&VB)</h4><p>這室內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文</p></div>
+  <div className="block f"><h4>React</h4><p>這室內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文</p></div>
+  <div className="block g"><h4>Tool</h4><p>這室內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文這是內文</p></div>
      	</div>);
 	}
 }

@@ -123,7 +123,8 @@ class App extends Component {
             }}>
         <ul id="content" ref="content">
          <li><a onClick={(e) => this.handleClick(e, '/')}>MENU</a></li>
-         <li><a onClick={(e) => this.handleClick(e, '/content')}>內容</a></li>
+         <li><a onClick={(e) => this.handleClick(e, '/content')}>Skill</a></li>
+         <li><a onClick={(e) => this.handleClick(e, '/timeline')}>timeline</a></li>
          <li><a onClick={(e) => this.handleClick(e, '/canvas')}>CanvasGame</a></li>
          <li><a onClick={(e) => this.handleClick(e, '/d3')}>d3View</a></li>
          <li><a onClick={(e) => this.handleClick(e, '/memList')}>fetchJsonData</a></li>

@@ -16,6 +16,7 @@ import Content1 from './components/Content1';
 import Intro from './components/Intro';
 import d3View from './components/d3View';
 import FetchApp from './fetchReact';
+import TimeLine from './components/TimeLine';
 
 import {
 	helloSaga,
@@ -81,6 +82,7 @@ ReactDOM.render(
 	    	<Router history={history}>
 	      <Route path="/" component={App}>
 	        <IndexRoute component={Intro} />
+	        <Route path="timeLine" component={TimeLine} />
 	        <Route path="canvas" component={Canvas} />
 	        <Route path="content" component={Content1} />
 	        <Route path="d3" component={d3View} />
