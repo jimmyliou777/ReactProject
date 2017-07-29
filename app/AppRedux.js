@@ -1,9 +1,25 @@
-import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { removeTodo, addTodo } from './actions/menuAction';
-import { Unmount, Didmount, } from './actions/canvasAction';
-import { browserHistory, Link, hashHistory, } from 'react-router';
+import React, {
+    Component
+} from 'react';
+import {
+    bindActionCreators
+} from 'redux';
+import {
+    connect
+} from 'react-redux';
+import {
+    removeTodo,
+    addTodo
+} from './actions/menuAction';
+import {
+    Unmount,
+    Didmount,
+} from './actions/canvasAction';
+import {
+    browserHistory,
+    Link,
+    hashHistory,
+} from 'react-router';
 
 import './RWD.css';
 import './css/flat-ui/dist/css/flat-ui.css';
@@ -37,20 +53,23 @@ class App extends Component {
         this.state = {
             height: 0,
             loadingState: 'none',
+            left: '100%',
         }
     }
 
     handleClick(e, path) {
         this.setState({
-            loadingState: 'block'
+            loadingState: 'block',
+            left:0,
         });
         this.props.actions.removeClass(0);
         setTimeout(() => {
             hashHistory.push(path);
             this.setState({
-                loadingState: 'none'
+                loadingState: 'none',
+                left: '100%',
             })
-        }, 500)
+        }, 1000)
 
         if (path !== '/canvas') {
             this.props.actions.Unmount();
@@ -74,7 +93,7 @@ class App extends Component {
         this.setState({
             height: this.content.offsetHeight
         });
-    //console.log(`this.state.height:${this.state.height}`);
+        //console.log(`this.state.height:${this.state.height}`);
     }
 
     render() {
@@ -89,9 +108,10 @@ class App extends Component {
             height: '100%',
             opacity: 0.5,
             position: 'absolute',
-            left: 0,
+            left: this.state.left,
             top: 0,
             zIndex: 1000,
+            transition: '1.5s',
             display: this.state.loadingState,
         };
         let LoadImage = {
@@ -130,17 +150,18 @@ class App extends Component {
          <li><a onClick={(e) => this.handleClick(e, '/memList')}>fetchJsonData</a></li>
         </ul>    
       </div> 
-      
       <Main />
-            <div style = {{
-                position: 'relative'
-            }}> 
+            <div style={{
+                    position: 'relative'
+                }}> 
             {
-            this.props.children
+                this.props.children
             }
-            <Footer />        
-            </div> 
-        </div>
+            <Footer /> 
+            <div className="loading" style={loadingStyle}>      
+            </div>
+            </div>
+            </div>
         );
     }
 }

@@ -300,6 +300,15 @@ body{
   height: 200px;
   background: #aaa;
 }
+@keyframes timeline-ani {
+            0% {
+              opacity: 0;
+            }
+            
+            100% {
+              opacity: 1;
+            }
+        }
 .timeline .timeline_content {
    height: 100%;
    width: 6px;
@@ -314,7 +323,7 @@ body{
 }
 .dialog_wrapper .dialog{
   position: absolute;
-  width: 250px;
+  width: 20vw;
   transition: .5s;
   cursor: pointer;
   background-color: #fff;
@@ -323,6 +332,7 @@ body{
   top:-10px;
   text-align: left;
   padding:15px 20px;
+  opacity: 0;
 }
 .dialog_wrapper::before{
   content: "";
@@ -351,12 +361,17 @@ body{
 }
 .dialog_wrapper:nth-child(2n+1) .dialog {
     left: 40px;
+    animation: timeline-ani 1s ease forwards;
+    animation-delay: .5s;
   }
 .dialog_wrapper:nth-child(2n) .dialog {
     right: 40px;
+    animation: timeline-ani 1s ease forwards;
+    animation-delay: 1s;
   }
 .dialog_wrapper:nth-child(2n+1) .dialog::before {
     left: -10px;
+    
 }
 .dialog_wrapper:nth-child(2n) .dialog::before {
     right: -10px;
@@ -412,12 +427,15 @@ body{
   .mem {
     width: 100%;
   }
+  .dialog{
+   width: 35vw !important;
+  }
 }
 @media screen and (max-width: 400px) {
   .b, .c, .d, .e, .f {
     width: 100%;
   }
-
+  
   .sblock {
     display: block;
     width: 100%;
