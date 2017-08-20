@@ -29,7 +29,9 @@ class TimeLine extends Component {
           <ul className="timeline_content">
           	<li className="dialog_wrapper">
           	  <div className="dialog">
-                <h3 className="date_year">2011</h3>
+                <h3 className="date_year">2011
+                  <div className="decor_obj"></div>
+                </h3>
                 <ul>
                 	<li>華泰旅遊</li>
                 </ul>
@@ -37,7 +39,9 @@ class TimeLine extends Component {
           	</li>
           	<li className="dialog_wrapper">
               <div className="dialog">
-                <h3 className="date_year">2013</h3>
+                <h3 className="date_year">2013
+                  <div className="decor_obj"></div>
+                </h3>
                 <ul>
                 	<li>亞卡西雅</li>
                 </ul>
@@ -45,7 +49,9 @@ class TimeLine extends Component {
           	</li>
           	<li className="dialog_wrapper">
           	  <div className="dialog">
-                <h3 className="date_year">2017</h3>
+                <h3 className="date_year">2017
+                 <div className="decor_obj"></div>
+                </h3>
                 <ul>
                 	<li>在職中~</li>
                 </ul>

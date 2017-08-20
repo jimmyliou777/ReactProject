@@ -40,8 +40,8 @@ module.exports = {
             exclude: /node_modules/,
             loader: 'babel-loader',
         }, {
-            test: /\.css$/,
-            loaders: ['style', 'css'],
+            test: /\.sass|css$/,
+            loaders: ['style', 'css','sass'],
         }, {
             //url-loader 传入的 limit 参数是告诉它图片如果不大于 25KB 的话要自动在它从属的 css 文件中转成 BASE64 字符串
             test: /\.(png|jpg|svg|gif|woff|woff2|eot|ttf)$/,

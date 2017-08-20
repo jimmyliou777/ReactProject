@@ -1,0 +1,420 @@
+@charset "UTF-8"
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+
+*
+  vertical-align: top
+  font-family: 微軟正黑體
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  &::after, &::before
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+html
+  margin: 0
+  padding: 0
+  border: 0
+
+body
+  margin: 0
+  padding: 0
+  border: 0
+  overflow-y: scroll
+
+.container
+  font-size: 0
+  max-width: 1024px
+  margin-left: auto
+  margin-right: auto
+  text-align: center
+  position: relative
+
+#btn
+  position: absolute
+  top: 20px
+  right: 20px
+  display: block
+  z-index: 10000
+  span
+    border: solid 1px #fff
+    display: block
+    margin-bottom: 4px
+    width: 30px
+
+.leftMenu
+  text-align: center
+  display: block
+  width: 100%
+  position: relative
+  box-sizing: border-box
+  /*border: solid 1px black;*/
+  overflow: hidden !important
+  #content
+    padding: 0
+    height: auto
+    li
+      color: orange !important
+      font-size: 20px
+      height: auto
+      list-style-type: none
+      > a
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important
+        display: block
+        background-color: #fcfcfc
+        padding: 10px
+        text-decoration: none
+        cursor: pointer
+        color: #337ab7 !important
+        &:hover
+          background: #fff
+
+#content a
+  &::after, &::before
+    opacity: 0
+    display: inline-block
+    transition: transform 0.3s,opacity 0.2s
+
+.leftMenu #content li > a
+  &::before
+    margin-right: 10px
+    content: '['
+    transform: translateX(20px)
+  &::after
+    margin-left: 10px
+    content: ']'
+    transform: translateX(-20px)
+  &:hover
+    &::before
+      opacity: 1
+      transform: translateX(-20px)
+    &::after
+      opacity: 1
+      transform: translateX(20px)
+
+.navbar_collapse
+  -webkit-transition: height 0.28s
+  transition: height 0.28s
+
+.in
+  max-height: 3000px !important
+
+.memSet
+  padding: 10px
+
+.memBlock
+  display: inline-block
+  padding: 0 10px 10px
+
+.memList
+  display: inline-block
+  width: 100%
+  height: auto
+  border: 1px solid black
+  text-align: center
+  border-radius: 4px
+  border-color: #ddd
+  .memHeading
+    color: #333
+    background-color: #f5f5f5
+    border-color: #ddd
+    border-top-left-radius: 3px
+    border-top-right-radius: 3px
+    padding: 10px
+  h2
+    margin-top: 0px
+    margin-bottom: 0px
+  .memListMain
+    border-top: solid 1px transparent
+    border-color: #ddd
+  .memListTitle
+    display: inline-block
+    width: 50%
+    font-size: 20px
+    font-weight: 600
+  .memListContent
+    display: inline-block
+    width: 50%
+    font-size: 24px
+
+.memDetail
+  font-size: 30px
+  margin-top: 10px
+  margin-bottom: 10px
+  border-top: solid 1px transparent
+  border-color: #ddd
+
+.d3block
+  display: block
+  width: 100%
+  height: auto
+  border: solid 1px black
+  p
+    font-size: 20px
+
+#app_main
+  h1, h3
+    font-family: "Open Sans", "Microsoft JhengHei", sans-serif
+    font-weight: 400
+    letter-spacing: 0px
+    margin-top: 0
+    margin-bottom: 10px
+    line-height: 1.5em
+
+.main
+  width: 100%
+  text-align: center
+  padding-top: 20px
+  h1
+    opacity: 0
+    font-size: 30px
+  h3
+    opacity: 0
+    font-size: 20px
+  p
+    opacity: 0
+    font-size: 16px
+    line-height: 1.5em
+    margin-bottom: 0
+    width: 66%
+    margin-left: 18%
+  img
+    max-width: 137px
+    border-radius: 50%
+    &.show
+      animation: main-top 0.5s ease forwards
+  h1.show, h3.show, p.show
+    animation: main-top 0.5s ease forwards
+
+@keyframes main-top
+  0%
+    opacity: 0
+
+  100%
+    opacity: 1
+
+
+.block
+  display: inline-block
+  font-size: 20px
+  box-sizing: border-box
+  /*border-top: 2px solid rgba(0,0,0,.12)!important;*/
+  height: 200px
+  text-align: center
+  padding: 10px
+  &.timeline
+    width: 100%
+    height: auto
+    background-color: #D4EBE8
+    padding: 0 !important
+    display: flex
+    align-items: center
+    justify-content: center
+  &.a
+    padding: 30px
+    background-color: #000
+    margin-bottom: 10px
+    &.reduxLogo
+      background-color: #fff
+  .icon
+    width: 30%
+    min-width: 200px
+  h4
+    text-align: left
+    margin-left: 7%
+  p
+    font-size: 15px
+  &.footer
+    width: 100%
+    margin-bottom: 10px
+    .information
+      line-height: 1.5em
+      text-align: left
+      margin-left: 15%
+
+#canvas
+  width: 100%
+  min-width: 300px
+  max-width: 500px
+
+.canvasbBlock
+  width: 100%
+  height: auto
+
+.sblocks
+  overflow: hidden
+
+.sblock img
+  width: 100%
+  height: 200px
+  background: #aaa
+
+@keyframes rain-in
+  0%
+    opacity: 0
+    transform: translate3d(0, -50px, 0)
+
+  100%
+    opacity: 1
+    transform: translate3d(0, 0, 0)
+
+
+@keyframes timeline-ani
+  0%
+    opacity: 0
+
+  100%
+    opacity: 1
+
+
+.timeline .timeline_content
+  height: 100%
+  width: 6px
+  background-color: rgba(255, 255, 255, 0.4)
+  margin: 0
+  padding-top: 50px
+
+.timeline_content .dialog_wrapper
+  height: 160px
+  position: relative
+
+.dialog_wrapper
+  .dialog
+    position: absolute
+    width: 20vw
+    transition: .5s
+    cursor: pointer
+    background-color: #fff
+    border-radius: 5px
+    box-shadow: 15px 15px #4FBDBC
+    top: -10px
+    text-align: left
+    padding: 15px 20px
+    opacity: 0
+  &::before
+    content: ""
+    display: block
+    width: 20px
+    height: 20px
+    border-radius: 50%
+    border: solid 5px white
+    transform: translateX(-40%)
+
+.dialog .date_year
+  font-size: 36px
+  font-weight: 700 !important
+  margin-bottom: 10px
+  letter-spacing: 3px !important
+
+.date_year .decor_obj
+  content: ""
+  position: absolute
+  width: 8px
+  height: 30px
+  top: -35px
+  left: 30px
+  border-radius: 5px
+  background-color: #F4DF39
+  animation: rain-in 0.5s 0.5s both
+
+.decor_obj
+  &::before, &::after
+    content: ""
+    position: absolute
+    width: 8px
+    height: 30px
+    top: -35px
+    left: 30px
+    border-radius: 5px
+    background-color: #F4DF39
+    animation: rain-in 0.5s 0.5s both
+  &::before
+    background-color: #F4A375
+    top: -30px
+    left: -25px
+    animation-duration: 1s
+  &::after
+    background-color: #FFF
+    top: -62px
+    left: 20px
+    animation-duration: 2s
+
+.dialog::before
+  content: ""
+  display: block
+  width: 20px
+  height: 20px
+  background-color: #fff
+  position: absolute
+  transform: rotate(45deg)
+  border-radius: 3px
+
+.dialog_wrapper
+  &:nth-child(2n+1) .dialog
+    left: 40px
+    animation: timeline-ani 1s ease forwards
+    animation-delay: .5s
+  &:nth-child(2n) .dialog
+    right: 40px
+    animation: timeline-ani 1s ease forwards
+    animation-delay: 1s
+  &:nth-child(2n+1) .dialog::before
+    left: -10px
+  &:nth-child(2n) .dialog::before
+    right: -10px
+
+.dialog:hover
+  transform: translate3d(-10px, -10px, 0)
+  box-shadow: 20px 20px #4FBDBC
+
+.timeline ul
+  list-style: none
+
+.intro
+  height: initial
+
+.a, .g, .intro
+  width: 100%
+
+.d, .e
+  width: 35%
+
+.c, .f
+  width: 30%
+
+.b
+  width: 70%
+
+.mem
+  width: 33.3%
+
+.a
+  border: 0px
+
+@media screen and (max-width: 800px)
+  .b
+    width: 100%
+  .c, .d, .e, .f
+    width: 50%
+  #btn
+    display: block
+  .mem
+    width: 100%
+  .dialog
+    width: 35vw !important
+
+@media screen and (max-width: 400px)
+  .b, .c, .d, .e, .f
+    width: 100%
+  .sblock
+    display: block
+    width: 100%
+    margin-bottom: 10px
